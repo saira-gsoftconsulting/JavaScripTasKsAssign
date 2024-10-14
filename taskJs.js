@@ -12,12 +12,10 @@ const userData={
   }
   const fetchUserData=(callback)=>{
   setTimeout(()=>{
-    // console.log(userData);
     return callback(userData)
   },2000)
   }
   const fetchOrderData=(callback)=>{
-    // console.log(orderData)
     setTimeout(()=>{
       return callback(orderData)
     },2000)

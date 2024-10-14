@@ -46,73 +46,74 @@ myNewBook.toggleReadStatus();
 console.log(myNewBook.getBookInfo());
 
 //Task 2
-// Handling Promises and Callbacks
+  // Handling Promises and Callbacks
 //userData
-console.log("Solution:Task2");
-const userData = {
-  name: "Alice",
-  age: 30,
-  city: "New Work",
-};
-//orderData
-const orderData = {
-  orderId: "5678",
-  amount: 1500,
-  product: "Smartphone",
-};
-//callback to fetch userData
-const fetchUserData = (callback) => {
-  setTimeout(() => {
-    return callback(userData);
-  }, 2000);
-};
-//callback to orderData
-const fetchOrderData = (callback) => {
-  setTimeout(() => {
-    return callback(orderData);
-  }, 2000);
-};
-//main function  to call userData and orderData,fetch userData before orderData
-const main = () => {
-  fetchUserData((userData) => {
-    console.log("Received User data", userData);
+// console.log("Solution:Task2");
+// const userData = {
+//   name: "Alice",
+//   age: 30,
+//   city: "New Work",
+// };
+// //orderData
+// const orderData = {
+//   orderId: "5678",
+//   amount: 1500,
+//   product: "Smartphone",
+// };
+// //callback to fetch userData
+// const fetchUserData = (callback) => {
+//   setTimeout(() => {
+//     return callback(userData);
+//   }, 2000);
+// };
+// //callback to orderData
+// const fetchOrderData = (callback) => {
+//   setTimeout(() => {
+//     return callback(orderData);
+//   }, 2000);
+// };
+// //main function  to call userData and orderData,fetch userData before orderData
+// const main = () => {
+//   fetchUserData((userData) => {
+//     console.log("Received User data", userData);
 
-    fetchOrderData((orderData) => {
-      console.log("Received order data", orderData);
-    });
-  });
-};
-main();
-//ReWrite with Promises and then/catch to handle the asynchronous logic
-const fetchUserData2 = () => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(userData);
-    });
-  });
-};
-const fetchOrderData2 = () => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(orderData);
-    });
-  });
-};
-//main
-function main2() {
-  fetchUserData2()
-    .then((userData) => {
-      console.log("resceived user data", userData);
-      return fetchOrderData2();
-    })
-    .then((orderData) => {
-      console.log("received order data", orderData);
-    })
-    .catch((error) => {
-      console.log("error occur n fetching data", error);
-    });
-}
-main2();
+//     fetchOrderData((orderData) => {
+//       console.log("Received order data", orderData);
+//     });
+//   });
+// };
+// main();
+// //ReWrite with Promises and then/catch to handle the asynchronous logic
+// const fetchUserData2 = () => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve(userData);
+//     });
+//   });
+// };
+// const fetchOrderData2 = () => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve(orderData);
+//     });
+//   });
+// };
+// //main
+// function main2() {
+//   fetchUserData2()
+//     .then((userData) => {
+//       console.log("resceived user data", userData);
+//       return fetchOrderData2();
+//     })
+//     .then((orderData) => {
+//       console.log("received order data", orderData);
+//     })
+//     .catch((error) => {
+//       console.log("error occur n fetching data", error);
+//     });
+// }
+// main2();
+
 
 //task 3
 //Advanced Asynchronous Handling: Async/Await and Error Handling
