@@ -14,8 +14,8 @@ Book.prototype.toggleReadStatus = function () {
 };
 // Add the getBookInfo method to the prototype
 Book.prototype.getBookInfo = function () {
-  const readStatus = this.read ? "Read" : "Not Read";
-  return `The book ${this.title} is read by ${this.author} has ${this.pages} pages. status:${readStatus}.`;
+  const readStatus = this?.read ? "Read" : "Not Read";
+  return `The book ${this?.title} is read by ${this?.author} has ${this?.pages} pages. status:${readStatus}.`;
 };
 const myBook = new Book("Computer Science", "Tim Berners-Lee", 180, true);
 console.log(myBook);
@@ -36,8 +36,8 @@ class newBook {
   }
   //bookInfo
   getBookInfo() {
-    const readStatus = this.read ? "Read" : "Not Read";
-    return `The book ${this.title} is read by ${this.author} has ${this.pages} pages. status:${readStatus}.`;
+    const readStatus = this?.read ? "Read" : "Not Read";
+    return `The book ${this?.title} is read by ${this?.author} has ${this?.pages} pages. status:${readStatus}.`;
   }
 }
 const myNewBook = new newBook("MathMatics", "Archimedes", 200, true);
@@ -47,7 +47,6 @@ console.log(myNewBook.getBookInfo());
 
 //Task 2
 // Handling Promises and Callbacks
-
 //userData
 console.log("Solution:Task2");
 const userData = {
